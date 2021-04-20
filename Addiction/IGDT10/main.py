@@ -20,7 +20,7 @@ def record_answer_time(personal_code, category, question, value, elapsed_ms):
     with open('data/{}_DIGT10_answer_time.csv'.format(personal_code), 'a') as f:
         f.write('{},{},{},{}\n'.format(category, question, value, elapsed_ms))
 
-@@eel.expose
+@eel.expose
 def record_score(personal_code, total):
     """
     スコア時間記録

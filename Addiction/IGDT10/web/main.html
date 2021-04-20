@@ -176,7 +176,7 @@ NPO法人Sapien Labs（Dr. Tara Thiagarajan）
           <div class="col-9 mx-auto">
             <form class="form-signin mb15">
               <br/>
-              <h4>ゲームについて次に出てくる文章をお読みください。このアンケートで使われている「ゲーム」とは、オンラインやオフラインなどを含めたすべてのビデオゲームのことです。それぞれの質問が、過去12ヵ月間、どの程度、そしてどれくらい頻繁（ひんぱん）に、あなたに当てはまるか、「全くなかった、ときどきあった、よくあった」から選んでください。 <br/>
+              <h4>ゲームについて次に出てくる文章をお読みください。<br>このアンケートで使われている「ゲーム」とは、オンラインやオフラインなどを含めたすべてのビデオゲームのことです。<br>それぞれの質問が、過去12ヵ月間、どの程度、そしてどれくらい頻繁（ひんぱん）に、あなたに当てはまるか、<br><strong>「全くなかった、ときどきあった、よくあった」</strong><br>から選んでください。 <br/>
                 <br>
               準備が整ったら、進んでください。</h4>
               <button class="btn btn-lg btn-outline-info btn-primary" style="float:right;margin-right:55px;margin-top:1rem;" id="startq_btn" type="button">次へ</button>
@@ -185,18 +185,18 @@ NPO法人Sapien Labs（Dr. Tara Thiagarajan）
         </div>
 
         <div id="question_view" class="nocursor">
-          <div style="height:210px;">
-            <div class="mx-auto text-center col-10">
+          <div style="height:300px;">
+            <div class="mx-auto text-center col-11">
               <h4 class="title" id="title"></h4>
               <h4>アンケート進捗(<span id="number"></span>%)</h4>
             </div>
 
-            <div class="mx-auto text-center text col-10" style="margin-bottom:2rem;">
+            <div class="mx-auto text-center text col-11" style="margin-bottom:2rem;">
               <h3 id="text"></h3>
             </div>
           </div>
 
-          <div class="mx-auto text-center text nocursor" id="3choices">
+          <div class="mx-auto text-center text nocursor" style="margin-top:1rem;" id="choices">
             <button type="button" class="btn btn-outline-info default_font shadow-none nocursor ans_btn" value="0">全くなかった</button>
             <button type="button" class="btn btn-outline-info default_font shadow-none nocursor ans_btn" value="1">ときどきあった</button>
             <button type="button" class="btn btn-outline-info default_font shadow-none nocursor ans_btn" value="2">よくあった</button>
