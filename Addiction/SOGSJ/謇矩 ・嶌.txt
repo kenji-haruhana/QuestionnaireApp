@@ -1,0 +1,14 @@
+windowsスタートメニュー
+→Anaconda3(64-bit)
+→AnacondaPromptを実行
+
+開いたコンソールに
+
+cd 脈波取得アプリ
+
+と入力しEnterキーを押してください。つづけて
+
+python main.py
+
+
+と入力しEnterキーを押すと実行されます。

@@ -1,0 +1,42 @@
+Installation Manual
+
+For Windows,
+
+Microsoft C++ Build Tool - Visual Studio
+Anaconda→python3.6.*→python packages
+
+In a terminal, first cd to the target directory where you expanded the zip file.
+
+> dir AUDIT
+
+> conda activate python36
+
+> pip install -r requirements.txt
+
+Once above installation has done, you can call main.py
+
+> python main.py
+
+it should bring a Chrome browser with questionnaires.
+
+
+For Mac,
+Commandline tools
+Anaconda→python3.6.*→python packages
+(or you may want to use your native python3.6.* if it is available)
+
+In a terminal, first cd to the target directory where you expanded the zip file.
+
+> cd AUDIT
+
+> conda activate python36
+
+> pip install -r requirements.txt
+
+Once above installation has done, you can call main.py
+
+> python main.py
+
+it should bring a Chrome browser with questionnaires.
+
+と入力しEnterキーを押すと実行されます。
