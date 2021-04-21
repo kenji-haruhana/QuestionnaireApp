@@ -37,7 +37,7 @@ def record_score(personal_code, total):
     """
     dt_now = datetime.now()
     dt = dt_now.strftime("%Y/%m/%d %H:%M:%S")
-    with open('data/{}_SOGS10_answer_time.csv'.format(personal_code), 'a') as f:
+    with open('data/{}_SOGS-J_answer_time.csv'.format(personal_code), 'a') as f:
         f.write('score,{},datetime,{}\n'.format(total,dt))
 
 # @eel.expose
