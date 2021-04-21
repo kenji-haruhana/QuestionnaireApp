@@ -142,7 +142,6 @@ function scoring(tempans){
   else if(tempans == 2){
   total += tempans;
   }
-  console.log(tempans, total)
 }
 
 $(function () {

@@ -1,6 +1,8 @@
 var start_ms = 0;
 var category = 1;
 var question = 0;
+var total = 0;
+var file_name = "";
 var answers = {
   1:{},2: {},3: {},4: {},5: {},6: {},7: {},8: {},9: {},10: {},
   11:{},12: {},13: {},14: {}
@@ -105,6 +107,18 @@ var constants = {
 function resultView() {
   $("#question_view").hide();
   $("#result_view").show();
+
+  //get table and decide where to highlight by total score
+  var eva_table = document.getElementById("evaluation_list")
+  $("#total").text(total);
+  if( 0 <= total && total <= 2 ){
+    eva_table.rows[1].style.backgroundColor= "#FFFF00";
+  } else if( 3 <= total && total <= 4){
+    eva_table.rows[2].style.backgroundColor= "#FFFF00";
+  } else {
+    eva_table.rows[3].style.backgroundColor= "#FFFF00";
+  }
+  eel.record_score(file_name, total);
 }
 
 function setQuestion() {
@@ -122,14 +136,14 @@ function setQuestion() {
       type = constants["survay"][category]["type"];
       title = constants["survay"][category]["title"];
       text = constants["survay"][category]["list"][question];
-      progress = (category/14*100).toFixed(0);
+      progress = ((category - 1)/14*100).toFixed(0);
       $("#number").text(progress);
     }
   } else {
     type = constants["survay"][category]["type"];
     title = constants["survay"][category]["title"];
     text = constants["survay"][category]["list"][question];
-    progress = (category/14*100).toFixed(0);
+    progress = ((category - 1)/14*100).toFixed(0);
     $("#number").text(progress);
   }
   $("#loss").hide();
@@ -172,7 +186,6 @@ function setQuestion() {
 // }
 
 $(function () {
-  // $("#informed_consent_view").hide();
   $("#initial_inst_view").hide();
   $("#question_view").hide();
   $("#result_view").hide();
@@ -202,7 +215,7 @@ $(function () {
 
   });
 
-  function getAnswer() {
+  function getAnswer(tempans) {
     is_valid_ans = true
     var type = constants["survay"][category]["type"];
     var node = $(`#${type}`)
@@ -216,12 +229,31 @@ $(function () {
       if (is_valid_ans) {
         answers[String(category)][String(question + 1)] = value;
         ans_value = answers[String(category)][String(question + 1)].join("&");
+        total += value.length;
       }
     } else {
       // inputタグが存在しない場合
       answers[String(category)][String(question + 1)] = this.value;
-    }
+
+      //category 1 adds a point if one answer more then "often"
+      if(category == 1){
+        if(tempans > 2){
+          total += 1;
+        }
+      }
+      // category 2&3 adds a point if answer is not No
+      else if(category == 2 || category == 3 ){
+        if(tempans >= 2){
+          total += 1;
+        }
+      }
+      // category 9 is no count qustion otherwise Yes +1
+      else if(category != 9 && tempans == 1){
+        total += 1;
+      }
   }
+  console.log(category, tempans, total)
+}
 
   $("#startq_btn").on("click", function () {
       $("#initial_inst_view").hide();
@@ -231,9 +263,10 @@ $(function () {
     });
 
   $(".ans_btn").on("click", function () {
-    getAnswer();
+    console.log(total, this.value)
+    getAnswer(parseInt(this.value));
     var elapsed_ms = new Date().getTime() - start_ms;
-    var file_name = $("#personal_code").val() + '_' + $("#getter").val();
+    file_name = $("#personal_code").val() + '_' + $("#getter").val();
     eel.record_answer_time(file_name, String(category), String(question + 1), String(this.value ? this.value : ans_value), elapsed_ms);
     if ((category == 9 && this.value != 1) || (category == 13 && this.value != 1) ){
         category++;
