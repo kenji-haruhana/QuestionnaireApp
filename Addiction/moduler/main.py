@@ -3,6 +3,10 @@ from datetime import datetime
 from serial.tools import list_ports
 from time import sleep
 
+@eel.expose
+def naming(file_name):
+    global prefix
+    prefix = file_name
 
 # @eel.expose
 # def get_com():
@@ -45,22 +49,26 @@ from time import sleep
 #         f.write('{},{}\n'.format(name, dt_now))
 
 @eel.expose
-def record_answer_time(personal_code, category, question, value, elapsed_ms):
+def record_answer_time(survey_id, category, question, value, elapsed_ms):
     """
     回答時間記録
     """
-    with open('data/{}_BPQ_answer_time.csv'.format(personal_code), 'a') as f:
+    with open('data/{}_{}_answer_time.csv'.format(prefix, survey_id), 'a') as f:
         f.write('{},{},{},{}\n'.format(category, question, value, elapsed_ms))
 
 @eel.expose
-def record_score(personal_code, total):
+def record_score(survey_id, total):
     """
     スコア時間記録
     """
     dt_now = datetime.now()
     dt = dt_now.strftime("%Y/%m/%d %H:%M:%S")
-    with open('data/{}_BPQ_answer_time.csv'.format(personal_code), 'a') as f:
+    with open('data/{}_{}_answer_time.csv'.format(prefix, survey_id), 'a') as f:
         f.write('score,{},datetime,{}\n'.format(total,dt))
+
+@eel.expose
+def next_q():
+    eel.start("mainJIAT.html", disable_cache=True)
 
 
 # @eel.expose

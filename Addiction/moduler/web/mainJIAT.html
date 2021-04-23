@@ -1,0 +1,237 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JIAT</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/commonJIAT.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <span class="navbar-brand mb-0 h1">アンケート</span>
+    </nav>
+    <div class="container-fluid" style="margin-top: 2%">
+      <div class="justify-content-center">
+        <!-- <div id="personal_code_view" class="row justify-content-center">
+          <div class="mx-auto">
+            <h3>個人コードと取得者名を入力してください。</h3>
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin mb10"><h4>
+              <div class="col-7 mx-auto" style="margin:2rem 0;">
+              <label>個人コード</label>
+                <input type="text" style="font-size:18pt;" class="form-control mb10" placeholder="" required="" autofocus="" id="personal_code"/>
+              </div>
+              <div class="col-7 mx-auto" style="margin-bottom:1rem;">
+                <label>取得者名</label>
+                <input type="text" style="font-size:18pt;" class="form-control mb10" placeholder="" required="" autofocus="" id="getter" />
+              </div></h4>
+              <h5><p class="text-danger">※ 個人コード・取得者名にスペースはご利用頂けません。</p></h5>
+              <div class="col-7 mx-auto" style="margin:2rem 0;">
+              <button style="font-size:18pt;margin-left:6rem;" class="btn btn-lg btn-primary btn-outline-info" id="start_btn" type="button">次へ</button>
+              </div>
+            </form>
+        </div>
+      </div> -->
+
+        <!-- <div id="informed_consent_view" class="row justify-content-center">
+          <div class="col-9">
+            <form class="form-signin mb10">
+              <h3 class="text-center">
+                <img src="img/hiroshima_univ_logo.png" style="max-height: 45px;"/><br>
+                <strong>感性情報の可視化および定量化へむけての基盤研究</strong>
+              </h3>
+              <textarea class="form-control" style="resize: none; font-size:110%" rows="19">
+１.本研究の目的
+
+本研究は、18歳以上80歳未満の健康な男女を対象として、2023年度までの間に非侵襲的な脳活動測定と、行動実験、質問紙を用いた感情や意思決定の評価、心拍、呼吸数等の生理指標および顔表情、視線などの情動表出の測定を組み合わせて行い、ヒトの様々な感性情報（情動・感情など）を非侵襲的に可視化・定量化できる技術を確立し、誰もが精神的な充足感を得られる物/環境づくりや精神疾患の予防/診断/治療法の開発に応用することを目的としています。なお、本研究の実施に関しては広島大学における倫理委員会の審査を受け、広島大学担当理事の許可を得ています。
+
+2.本研究の内容・方法
+
+まずご協力いただいた皆さんには、Web・アプリにていくつかの質問紙アンケートにご回答いただきます。質問紙には、過去または現在の気分、性格、趣向、精神状態等を測定するための様々な評価尺度への回答をしていただきます。
+
+広島大学大学院医系科学研究科精神神経医科学教室およびに広島大学の感性イノベーション拠点に集められたデータは全て匿名化して保存し，一定数に達しましたら，奈良先端科学技術大学院大学、University of Londonとも共有し，最新の数理モデルとコンピュータを用いて解析を行います。また、同意いただけた場合には、匿名化されたデータを他の研究にも利用させていただきます。具体的には、精神疾患の脳の構造よび機能的特徴を明らかにするための研究において、健常対照群として解析に加えさせていただきます。
+
+この研究は2014年6月9日（倫理委員会承認日）から2023年3月31日にかけて行います。
+
+3.プライバシーの保護
+
+この研究で得られた情報については全て個人情報とは無関係の番号をつけて匿名化した後に分析しますので、ご協力いただいた方の個人情報が外部に公表されるようなことは一切ございません。
+
+4.参加された場合の利益および医学上の貢献
+
+私たちの研究は、あなたにとって直ちに役立つものではありません。しかし、検討を重ねることによって、脳科学および医学の進歩に貢献するものと考えています。本研究への参加の際、ごくまれに不快感や疲労を感じる方がおられますが、ご負担とお感じになった場合は理由の如何に関わらずいつでも中止することができます。ご希望の方には行われた検査の結果についてお知らせいたします。また、希望される場合は他の研究対象者の個人情報などの保護および当該研究の独創性の確保に支障のない範囲内で研究計画書及び研究方法に関する資料を入手または閲覧できます。その際には説明書末尾の連絡先までご連絡ください。
+
+5.データの保存方法および二次利用について
+
+研究により得られた個人情報は、氏名等個人を特定する情報がわからないように匿名化して保存されます。データは、脳・こころ・感性科学研究センターにおけるセキュリティーの厳重な部屋に設置したパスワード付きのPC（閉域網上のコンピュータ）に保
+
+管し、同意書等の書類は鍵のかかるキャビネットや上記のPCに保管します。
+
+データは全て匿名化して扱いますが、廃棄することは予定していません。
+
+この研究のために集めたデータは、将来この研究とは別の研究に利用させていただく可能性があります。これを「データの二次利用」といいます。データの二次利用の際には、その研究に関する情報を開示し、データ使用の拒否権を行使できるようにします。 また、個人を特定できない形で改めて、倫理審査委員会で承認を受けてから使用します。
+
+6.知的財産権および研究成果の公表について
+
+あなたの協力によって得られた研究成果は、氏名等が明らかにならないように個人情報の保護には特に厳重な配慮をした上で、学会発表や学術論文等として公表されることがあります。また、これらの研究を通じて特許権等の知的財産権が生じる可能性がありますがあなたには帰属されません。
+
+7.参加された場合の経済的負担
+
+本研究に参加された場合も、特別な経済的負担が加わることはなく、検査時間やご負担に応じて謝礼をお支払いいたします。
+
+8.参加されなくても不利益をうけないこと
+
+本研究へ参加するかどうかはあなたの自由です。たとえ参加されない場合でも不利益な対応を受けることは一切ありません。
+
+9.同意はいつでも撤回できること
+
+本研究へ参加の同意をした後でも、あなたはいつでも同意を撤回することができます。
+
+10.文書による同意
+
+本研究ではあなたの同意を文書で得ることが求められています。以上の内容をご理解いただき、もし研究に協力いただけるようでしたら同意書に許可の回答をお願い致します。
+
+11. 研究に係る利益相反に関する状況
+
+本研究は主に革新的イノベーション創出プログラム（COI STREAM: 精神的価値が成長する感性イノベーション拠点）と科学研究費補助金、および共同研究機関として参画している企業との共同研究として行っています。
+
+研究責任者
+
+広島大学脳・こころ・感性科学研究センター
+
+特任教授 山脇成人
+
+連絡先
+
+広島大学大学院医系科学研究科精神神経医科学
+
+准教授 岡田 剛、教授 岡本泰昌
+
+〒734-8551 広島市南区霞1-2-3 TEL 082-257-1722
+
+共同研究機関一覧 (研究責任者)
+
+広島大学大学院医系科学研究科精神神経医科学 (教授 岡本泰昌)
+広島大学大学院医系科学研究科脳神経外科学（准教授 飯田幸治）
+広島大学大学院医系科学研究科運動機能医科学（教授 浦川将）
+広島大学保健管理センターカウンセリング部門（助教 高垣耕企）
+広島大学大学院先進理工系科学研究科（教授 辻敏夫）
+広島大学大学院人間社会科学研究科（准教授 中尾敬）
+広島大学情報メディア教育研究センター（准教授 近堂徹）
+広島大学病院リハビリテーション科（教授 木村浩彰）
+広島大学病院診療支援部リハビリテーション部門（部門長 平田和彦）
+広島市立大学大学院情報科学研究科（助教 目良和也）
+広島経済大学経済学部（准教授 石野亜耶）
+追手門学院大学心理学部（教授 乾敏郎）
+大阪大学数理・データ科学教育研究センター（特任講師 朝倉暢彦）
+奈良先端科学技術大学院大学先端科学技術研究科（准教授 吉本潤一郎）
+University of London, City Department of Psychology（Dimitris Pinotsis）
+Arizona State University School of Computing Informatics and Decision Systems Engineering
+（Hemanth Kumar Demakethepalli Venkateswara）
+マツダ株式会社技術研究所（先進ヒューマン・ビークル研究部門 主幹研究員 道田奈々江）
+国立研究開発法人産業技術総合研究所（研究員 金山範明）
+TOTO株式会社総合技術研究所（健康技術研究グループ グループリーダー 浮貝清岳）
+広島ガス株式会社（研究員 島尾晶裕）
+株式会社明治技術研究所（グループ長 外山義雄）
+Fabeee株式会社（代表取締役 佐々木 淳）
+株式会社BNGパートナーズ（代表取締役 蔵元 二郎）
+メディカル・ケア・サービス株式会社（代表取締役社長 山本 教雄）
+株式会社CRAZY（代表取締役社長 森山 和彦）
+社会福祉法人 福智会（理事長 永末 春雄）
+Abstract合同会社（代表社員 吉岡由宇）
+ポーザー株式会社（三由 野）
+株式会社日立製作所（大内 敏）
+NPO法人Sapien Labs（Dr. Tara Thiagarajan）
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　E-965-14　2021/1/26承認
+
+広島大学長 殿
+
+わたしは、「感性情報の可視化および定量化へむけての基盤研究」に参加するにあたり、説明文書に記載された項目などについて、詳細な説明を受け、内容を十分理解しました。
+
+· 本研究の目的は将来の応用を見据えての感性情報の可視化および定量化へむけての基盤研究で、あなたにとって直ちに役立つものではありません。
+· 自記式評価尺度による心理検査の測定をさせていただきます。
+· データは匿名化の上、他の研究機関と必要に応じて共有し解析させていただきます。
+· 検査結果は直ちに役立つものではありませんが、希望があれば説明させていただきます。
+· 本研究では非侵襲的脳機能測定および行動実験に先立ちあるいは並行して、質問紙のみを用いた感性の個人差の予備調査を行っています。
+· 本研究によって得られた成果は、個人情報の保護を徹底した上で学会発表や学術論文として公表されることがあります。また、知的財産権が生じてもあなたにその権利はありません。
+· 研究に協力するかどうかはあなたの自由意思に基づき、いつでも同意を撤回することができます。
+· 研究責任者の所属、職、氏名および本研究に関する連絡先を確認しました。
+
+上記内容に同意される方は「本人氏名をご記入」の上「同意する」ボタンをクリックしてください。
+同意を拒否される方は、回答をせずにこの「同意しない」ボタンをクリックしてください。</textarea>
+
+            <h5><p style="margin-top: 1%; margin-left: 3%" class="text-center">個人の性格に関する質問内容となっております。</p></h5>
+              <div style="font-size: 110%;vertical-align:middle;margin-left:5rem;" type="text">
+                <label style="height:42px;font-size:17pt;padding:0.6rem 0rem;vertical-align:middle;">本人氏名</label>
+                <input style="height:42px;font-size:18pt;padding:1rem .75rem;vertical-align:middle;" type="text" name="signature" id="signinput" autocomplete="off" size="25">
+                <button style="margin: 0px 20px; font-size: 110%;" type="button" class="btn btn-outline-info signature" id="submit_sign" value="" disabled>同意する</button>
+                <button class="btn btn-outline-info btn-default" style="margin: 0px 0px; font-size: 110%;" onClick="closeWindow()">同意しない</button>
+              </div>
+            </form>
+          </div>
+        </div> -->
+
+        <div id="initial_inst_view" class="row justify-content-center">
+          <div class="col-8 mx-auto">
+            <form class="form-signin mb15">
+              <br/>
+              <h4>インターネットに関する質問にお答えください。この場合、利⽤する機器は、パソコン、携帯電話、スマートフォン、ゲーム機などオンラインで使⽤するすべてを含みます。
+                各質問の1〜20について最もあてはまる回答を1つ選び、タップしてください。
+                ⾃分に関係のない質問であれば「全くない」を選んでください。<br>
+                <br>
+                準備が整ったら、進んでください。</h4>
+              <button class="btn btn-lg btn-outline-info btn-primary" style="float:right;margin-right:40px;margin-top:1rem;" id="startq_btn" type="button">次へ</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="question_view" class="nocursor">
+          <div style="height:210px;">
+            <div class="mx-auto text-center col-10">
+              <h4 class="title" id="title"></h4>
+              <h4>アンケート進捗(<span id="number"></span>%)</h4>
+            </div>
+
+            <div class="mx-auto text-center text col-10" style="margin-bottom:2rem;">
+              <h3 id="text"></h3>
+            </div>
+          </div>
+
+          <div class="mx-auto text-center text nocursor" id="scale">
+            <button type="button" class="btn btn-outline-info default_font shadow-none nocursor ans_btn" style="margin-top:1rem;" value="1">全くない</button><br>
+            <button type="button" class="btn btn-outline-info default_font shadow-none nocursor ans_btn" style="margin-top:1rem;" value="2">まれにある</button><br>
+            <button type="button" class="btn btn-outline-info default_font shadow-none nocursor ans_btn" style="margin-top:1rem;" value="3">ときどきある</button><br>
+            <button type="button" class="btn btn-outline-info default_font shadow-none nocursor ans_btn" style="margin-top:1rem;" value="4">よくある</button><br>
+            <button type="button" class="btn btn-outline-info default_font shadow-none nocursor ans_btn" style="margin-top:1rem;" value="5">いつもある</button><br>
+          </div>
+        </div>
+
+        <div class="mx-auto text-center" id="result_view">
+          <div><h3 class="title">今回、あなたのインターネットアディクションテスト点数は<strong><span id="total"></span>点</strong>でした。<br>
+            <table class="mx-auto" border="2" style="margin-top: 1rem;" id="evaluation_list">
+              <tr><th>点数範囲</th><th>評価</th></tr>
+              <tr><td>20～39点</td><td>平均的なオンライン・ユーザー（インターネット・ユーザー？）</td></tr>
+              <tr><td>40～69点</td><td>インターネットによる問題があります。インターネットがあなたの生活に与えている影響についてよく考えてみてください。</td></tr>
+              <tr><td>70～100点</td><td>インターネットがあなたの生活に重大な問題をもたらしています。すぐに治療の必要があるでしょう。</td></tr>
+            </table>
+            </h3>
+          </div>
+        <div><h3 class="title" id="title">ご協力ありがとうごさいました。</h3></div>
+        </br>
+          <button class="btn btn-outline-info btn-lg" style="margin: 0px 20px; font-size: 110%;" onClick="window.location.reload();">最初に戻る</button>
+          <button class="btn btn-outline-info btn-lg" style="margin: 0px 20px; font-size: 110%;" onClick="closeWindow()">ウィンドウを閉じる</button>
+        </div>
+
+      </div>
+    </div>
+    <!-- <footer class="footer">
+    <div class="container">
+      <p class="text-muted text-right">Fotome Inc.</p>
+    </div>
+  </footer> -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="js/commonJIAT.js"></script>
+  </body>
+</html>
