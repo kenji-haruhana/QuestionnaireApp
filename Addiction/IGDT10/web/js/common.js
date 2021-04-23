@@ -139,7 +139,7 @@ function scoring(tempans){
     total += 1;
   }
   else if(tempans == 2){
-  total += tempans;
+  total += 1;
   }
 }
 
