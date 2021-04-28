@@ -45,6 +45,10 @@
 .btn::-moz-focus-inner{ /*Firefox用*/
     border: none;
 }
+.ans_btn {
+  /* add margin between answer buttons */
+  margin: 2rem;
+}
 label, input[type='checkbox'] {
     cursor: pointer;
 }
