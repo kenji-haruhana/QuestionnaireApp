@@ -1,0 +1,18 @@
+windows�X�^�[�g���j���[
+��Anaconda3(64-bit)
+��AnacondaPrompt�����s
+
+�J�����R���\�[����
+
+cd ���g�擾�A�v��
+
+�Ɠ��͂�Enter�L�[�������Ă��������B�Â���
+
+python main.py
+
+
+�Ɠ��͂�Enter�L�[�������Ǝ��s�����܂��B
+
+2021/3/15
+make explanation and informed consent page as 1 page document and minor changes for button position.
+Change progress expression to %.
