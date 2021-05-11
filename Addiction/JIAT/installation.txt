@@ -1,17 +1,33 @@
 Installation Manual
 
-For Windows,
+First time setting for Windows,
 
-Microsoft C++ Build Tool - Visual Studio
-Anaconda→python3.6.*→python packages
+Download and install following 2 software
+1. Microsoft C++ Build Tool - Visual Studio
+2. Anaconda
 
-In a terminal, first cd to the target directory where you expanded the zip file.
+In Anaconda, you need to setup virtual environment for python3.6
 
-> dir AUDIT
+1. Launch Anaconda
+2. In Anaconda terminal, type following 
 
-> conda activate python36
+> conda create --name py36 python=3.6 
+
+Python version 3.6 will be installed and can be called py36
+
+Go to the target directory where you expanded the zip file.
+
+> dir /path/to/QuestionnaireDir
+
+Python3.6 will be activated by
+
+> conda activate py36
+
+Dependent libraries are required to install by
 
 > pip install -r requirements.txt
+
+
 
 Once above installation has done, you can call main.py
 
@@ -25,18 +41,30 @@ Commandline tools
 Anaconda→python3.6.*→python packages
 (or you may want to use your native python3.6.* if it is available)
 
-In a terminal, first cd to the target directory where you expanded the zip file.
+In Anaconda, you need to setup virtual environment for python3.6
 
-> cd AUDIT
+1. Launch Anaconda(you may call it from NEW terminal after above installation)
+2. In Anaconda terminal, type following 
 
-> conda activate python36
+> conda create --name py36 python=3.6 
+
+Python version 3.6 will be installed and can be called py36
+
+Go to the target directory where you expanded the zip file.
+
+> cd /path/to/QuestionnaireDir
+
+Python3.6 will be activated by
+
+> conda activate py36
+
+Dependent libraries are required to install by
 
 > pip install -r requirements.txt
-
 Once above installation has done, you can call main.py
+
+
 
 > python main.py
 
 it should bring a Chrome browser with questionnaires.
-
-と入力しEnterキーを押すと実行されます。
