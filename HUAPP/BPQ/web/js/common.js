@@ -167,21 +167,21 @@ function setQuestion() {
     category++;
     question = 0;
     if (!constants["survay"][category]) {
-      var file_name = $("#personal_code").val() + '_' + $("#getter").val();
-      eel.post_recorded_files(file_name);
+      // var file_name = $("#personal_code").val() + '_' + $("#getter").val();
+      // eel.post_recorded_files(file_name);
       resultView();
     } else {
       type = constants["survay"][category]["type"];
       title = constants["survay"][category]["title"];
       text = constants["survay"][category]["list"][question];
-      progress = (category/12*100).toFixed(0);
+      progress = ((category - 1 )/12*100).toFixed(0);
       $("#number").text(progress);
     }
   } else {
     type = constants["survay"][category]["type"];
     title = constants["survay"][category]["title"];
     text = constants["survay"][category]["list"][question];
-    progress = (category/12*100).toFixed(0);
+    progress = ((category - 1 )/12*100).toFixed(0);
     $("#number").text(progress);
   }
   $("#scale").hide();
@@ -190,13 +190,13 @@ function setQuestion() {
   $("#text").html(text);
 }
 
-async function device_check() {
-  var check = await eel.device_check()();
-  if (!check) {
-    alert("脈波取得デバイスの接続を確認してください。");
-    window.close();
-  }
-}
+// async function device_check() {
+//   var check = await eel.device_check()();
+//   if (!check) {
+//     alert("脈波取得デバイスの接続を確認してください。");
+//     window.close();
+//   }
+// }
 
 $(function () {
   $("#informed_consent_view").hide();

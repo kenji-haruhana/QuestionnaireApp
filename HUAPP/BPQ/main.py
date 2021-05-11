@@ -35,14 +35,14 @@ from time import sleep
 #     else:
 #         return True
 
-# @eel.expose
-# def record_agreement(file_name, name):
-#     """
-#     同意記録
-#     """
-#     dt_now = datetime.now()
-#     with open('data/{}_BPQ_agreement.csv'.format(file_name), 'a') as f:
-#         f.write('{},{}\n'.format(name, dt_now))
+@eel.expose
+def record_agreement(file_name, name):
+    """
+    同意記録
+    """
+    dt_now = datetime.now()
+    with open('data/{}_BPQ_agreement.csv'.format(file_name), 'a') as f:
+        f.write('{},{}\n'.format(name, dt_now))
 
 @eel.expose
 def record_answer_time(personal_code, category, question, value, elapsed_ms):
